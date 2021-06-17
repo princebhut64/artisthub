@@ -1,0 +1,98 @@
+{% extends 'headeruser.html' %}
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/team.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:50:35 GMT -->
+<head>
+	<title>Crowd</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}">
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cue.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/shop.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/mediaelementplayer-legacy.css' %}">
+	<script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	{% block content %}
+			<section class="page_breadcrumbs cs gradient section_padding_top_25 section_padding_bottom_25 table_section table_section_md">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-left">
+							<h2 class="small">Team</h2>
+						</div>
+						<div class="col-md-6 text-center text-md-right">
+							<ol class="breadcrumb">
+								<li> <a href="{% url 'index' %}">
+							Home
+						</a> </li>
+								<li class="active">More</li>
+								<li class="active">Team</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ls page_portfolio section_padding_top_100 section_padding_bottom_100">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="isotope_container isotope row masonry-layout columns_margin_bottom_20">
+								{% for i in context.tid %}
+								<div class="isotope-item col-lg-4 col-md-6 col-sm-6">
+									<div class="vertical-item content-absolute hover-entry-content text-center">
+										<div class="item-media"> <img src="{{i.photos.url}}" alt=""> </div>
+										<div class="item-content cs transp_gradient_bg">
+											<h4 class="entry-title bottommargin_0"> <a href="{% url 'teamsingle' %}">{{i.name}}</a> </h4>
+											<p class="small-text">{{i.category}}</p>
+											<div class="divided-content darklinks"> <span><a class="social-icon socicon-facebook" href="#" title="Facebook"></a></span> <span><a class="social-icon socicon-twitter" href="#" title="Twitter"></a></span> <span><a class="social-icon socicon-youtube" href="#" title="Youtube"></a></span>												<span><a class="social-icon socicon-google" href="#" title="Google"></a></span> </div>
+											<div class="entry-content">
+												<div class="toppadding_20">
+													<p class="content-3lines-ellipsis"> {{i.description}} </p>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+							<!-- eof .isotope_container.row -->
+						</div>
+					</div>
+				</div>
+			</section>
+			{% endblock %}
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+	<script src="{% static 'js/compressed.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/switcher.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/team.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:50:35 GMT -->
+</html>

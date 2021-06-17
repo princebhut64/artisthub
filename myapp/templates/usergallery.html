@@ -1,0 +1,386 @@
+{% extends 'headeruser.html' %}
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/gallery-tile.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:50:41 GMT -->
+<head>
+	<title>Crowd</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}">
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cue.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/shop.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/mediaelementplayer-legacy.css' %}">
+	<script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+{% block content %}
+			<section class="page_breadcrumbs cs gradient section_padding_top_25 section_padding_bottom_25 table_section table_section_md">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-left">
+							<h2 class="small">Gallery</h2>
+						</div>
+						<div class="col-md-6 text-center text-md-right">
+							<ol class="breadcrumb">
+								<li> <a href="{% url 'index' %}">
+							Home
+						</a> </li>
+								<li class="active">Gallery</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ls page_portfolio section_padding_top_100 section_padding_bottom_0 columns_padding_0 columns_margin_0">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="filters isotope_filters text-center darklinks"> <a href="#" data-filter="*" class="selected">All</a> <a href="#" data-filter=".cat1">Musican</a> <a href="#" data-filter=".cat2">Singer</a> <a href="#" data-filter=".cat3">dancer</a> <a href="#" data-filter=".cat4">anchor</a> <a href="#" data-filter=".cat5">Liveband</a></div>
+							<div class="isotope_container isotope row masonry-layout" data-filters=".isotope_filters">
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat1">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/21.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/21.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat1">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/12.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/12.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat1">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/22.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/22.png"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat4">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/31.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/31.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat4">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/32.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/32.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat4">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/23.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/23.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat2">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/24.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/24.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat2">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/25.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/25.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat2">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/26.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/26.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat3">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/27.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/27.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat3">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/50.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/50.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat3">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/40.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/40.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat5">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/45.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/45.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat5">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/51.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/51.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat5">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/52.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/52.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat5">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/53.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/53.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat5">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/54.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/54.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat2">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/60.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/60.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat2">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/57.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/57.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat2">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/58.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/58.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat3">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/70.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/70.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat3">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/71.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/71.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat1">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/72.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/72.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat4">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/73.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/73.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								<div class="isotope-item col-lg-4 col-md-4 col-sm-6 cat4">
+									<div class="vertical-item gallery-item content-absolute text-center ds">
+										<div class="item-media"> <img src="{% static 'images/gallery/74.png' %}" alt="">
+											<div class="media-links">
+												<div class="links-wrap"> <a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{% static 'images/gallery/74.png' %}"></a> </div>
+											</div>
+										</div>
+										<div class="item-content darken_gradient">
+											<h4 class="poppins"> <a href="#"></a> </h4>
+										</div>
+									</div>
+								</div>
+								
+								
+							</div>
+							<!-- eof .isotope_container.row -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ls section_padding_top_50 section_padding_bottom_100">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center"> <a href="#" class="theme_button color min_width_button margin_0">Load More</a> </div>
+					</div>
+				</div>
+			</section>
+		{% endblock %}
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+	<script src="{% static 'js/compressed.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/switcher.js' %}"></script>
+</body>
+</html>

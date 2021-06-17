@@ -1,0 +1,52 @@
+{% load static %}
+{% block content %}
+<html>
+<head>
+  <title>Artist Hub</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+
+
+</head>
+<body>
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		
+		<form action="{% url 'login' %}" method="POST">
+		  {% csrf_token %}
+		{% if s_msg %}
+		<div class="alert alert-success" role="alert">
+		{{ s_msg }}
+		</div>
+		{% endif %}
+
+			<h1>Sign in</h1>
+			<span>or use your account</span>
+			<input type="email" name="email"  placeholder="Email" />
+			<input type="password" name="password" placeholder="Password" />
+			<a href="{% url 'forgot-password-page' %}">Forgot your password?</a>
+			<button type="submit" value="SIGNUP" >Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Created with <i class="fa fa-heart"></i> by
+		<a target="_blank" href="https://google.com">Prince Bhut</a>
+		- Read how I created this and how you can join the challenge
+		<a target="_blank" href="https://google.com">here</a>.
+	</p>
+</footer>
+<script src="{% static 'js/signup.js' %}"></script>
+</body>
+</html>
+{% endblock %}

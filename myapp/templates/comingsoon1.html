@@ -1,0 +1,296 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/comingsoon1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:50:35 GMT -->
+<head>
+	<title>Artist Hub</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}">
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cue.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/shop.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/mediaelementplayer-legacy.css' %}">
+	<script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<!--[if lt IE 9]>
+		<div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+	<![endif]-->
+	<div class="preloader">
+		<div class="preloader_image"></div>
+	</div>
+	<!-- search modal -->
+	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal"> <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		<span aria-hidden="true">
+			<i class="rt-icon2-cross2"></i>
+		</span>
+	</button>
+		<div class="widget widget_search">
+			<form method="post" class="searchform search-form form-inline" action="{% url 'comingsoon1' %}">
+				<div class="form-group bottommargin_0"> <input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input"> </div> <button type="submit" class="theme_button no_bg_button">Search</button> </form>
+		</div>
+	</div>
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls with_padding">
+			<!-- Uncomment this UL with LI to show messages in modal popup to your user: -->
+			<!--
+		<ul class="list-unstyled">
+			<li>Message To User</li>
+		</ul>
+		-->
+		</div>
+	</div>
+	<!-- eof .modal -->
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+			<!-- template sections -->
+			<section class="page_toplogo with_bottom_overlap_logo ls with_top_color_border columns_padding_0">
+				<div class="container">
+					<div class="row flex-wrap v-center">
+						<div class="col-sm-2 col-sm-push-5 text-left text-sm-center">
+							<div class="bottom_overlap_logo"> <a href="{% url 'index' %}" class="logo">
+	                    <img src="{% static 'images/logo.png' %}" alt="">
+	                </a> </div>
+							<!-- header toggler --><span class="toggle_menu"><span></span></span>
+						</div>
+						<div class="col-sm-5 col-sm-pull-2 hidden-xs"> <span class="small-text rightpadding_20 hidden-sm">follow us:</span> <span class="divided-content">
+					<span><a class="social-icon socicon-facebook" href="#" title="Facebook"></a></span> <span><a class="social-icon socicon-twitter" href="#" title="Twitter"></a></span> <span><a class="social-icon socicon-youtube" href="#" title="Youtube"></a></span>							<span><a class="social-icon socicon-google" href="#" title="Google"></a></span> </span>
+						</div>
+						<div class="col-sm-5 text-left text-sm-right">
+							<div class="divided-content small-text greylinks color2">
+								<div>
+									<div class="dropdown"> <a href="#0" id="account-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My account
+								<span class="caret"></span>
+	                		</a>
+										<ul class="dropdown-menu" aria-labelledby="account-dropdown">
+											<li> <a href="#0">Sign In</a> </li>
+											<li> <a href="#0">Sign Up</a> </li>
+										</ul>
+									</div>
+								</div>
+								<div class="hidden-sm hidden-xs"> <a href="shop-cart-right.html" class="cart-button">
+                			<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                			<span class="total-price">
+                				$1385,00
+                			</span>
+                		</a> </div>
+								<div class="hidden-xs hidden-sm">
+									<div class="dropdown inline-block"> <a href="#" id="search-dropdown" class="theme_button no_bg_button square_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                				<i class="fa fa-search" aria-hidden="true"></i>
+                			</a>
+										<div class="dropdown-menu" aria-labelledby="search-dropdown">
+											<div class="widget widget_search">
+												<form method="get" class="searchform form-inline" action="{% url 'comingsoon1' %}">
+													<div class="form-group-wrap">
+														<div class="form-group margin_0"> <label class="sr-only" for="topline-search">Search for:</label> <input id="topline-search" type="text" value="" name="search" class="form-control" placeholder="Search Keyword"> </div> <button type="submit" class="theme_button no_bg_button">Search</button>														</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<header class="page_header header_darkgrey background_cover divided_items with_menu_icon">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<!-- main nav start -->
+							<nav class="mainmenu_wrapper">
+								<ul class="mainmenu nav sf-menu">
+									<li class="active"> <a href="{% url 'index' %}">Home</a>
+									</li>
+									
+									<!-- eof pages -->
+									<li> <a href="{% url 'albums' %}">free albums</a></li>
+			
+									<li> <a href="{% url 'shop' %}">Artists</a>
+										<ul>
+											<li> <a href="{% url 'shop' %}">book artist</a></li>
+											<li> <a href="{% url 'shopregister' %}">artist registation</a> </li>
+										</ul>
+									</li>
+			
+									<!-- eof features -->
+									<!-- gallery -->
+									<li> <a href="{% url 'gallery1' %}">Photos</a></li>
+									<li> <a href="{% url 'shop' %}">Store</a>
+										<ul>
+											<li> <a href="{% url 'shop' %}">Store</a> </li>
+										</ul>
+									</li>
+									<!-- eof shop -->
+									<!-- contacts -->
+									<li> <a href="{% url 'contact4' %}">Contact us</a></li>
+									<!-- eof contacts -->
+									<li> <a href="{% url 'about' %}">more</a>
+										<ul>
+											<!-- eof features -->
+											<li> <a href="{% url 'about' %}">About</a> </li>
+											<!-- events -->
+											<li> <a href="{% url 'events' %}">Events</a>
+											</li>
+											<!-- eof events -->
+											<li> <a href="{% url 'team' %}">Team</a></li>
+											<li> <a href="{% url 'comingsoon1' %}">Comingsoon</a></li>
+											<li> <a href="{% url 'faq' %}">FAQ</a></li>
+										</ul>
+									</li>
+								</ul>
+									
+							</nav>
+							<!-- eof main nav -->
+						</div>
+					</div>
+				</div>
+			</header>
+			<section class="page_breadcrumbs cs gradient section_padding_top_25 section_padding_bottom_25 table_section table_section_md">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-left">
+							<h2 class="small">Coming Soon</h2>
+						</div>
+						<div class="col-md-6 text-center text-md-right">
+							<ol class="breadcrumb">
+								<li> <a href="{% url 'index' %}">
+							Home
+						</a> </li>
+								<li class="active">more</li>
+								<li class="active">Coming Soon</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="comingsoon1" class="ls section_padding_top_100 section_padding_bottom_100">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<h1 class="section_header big"> Coming Soon</h1>
+							<h3>Live India Expo</h3>
+							<p class="underheading">Riverfornt,Ahmedabad</p>
+							<div id="comingsoon-countdown"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4 col-md-push-4 col-sm-6 col-sm-push-3 text-center">
+							<div class="widget widget_mailchimp">
+								<p>Subscribe to our latest news to be updated, we promise not to spam!</p>
+								<form class="signup" action="{% url 'comingsoon1' %}" method="get">
+									<div class="form-group"> <input name="email" type="email" class="mailchimp_email form-control" placeholder="Email Address"> </div> <button type="submit" class="theme_button color1 no_bg_button">Send</button>
+									<div class="response"></div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<footer class="page_footer ds section_padding_top_100 section_padding_bottom_75">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="cs gradient_bg with_padding big-padding">
+                    <div class="row columns_padding_0">
+                        <div class="col-md-3 col-sm-4 text-center text-sm-left">
+                            <h5 class="margin_0"> <span class="small">Register for</span><br> Our newsletter </h5>
+                        </div>
+                        <div class="col-md-6 col-sm-4">
+                            <div class="widget widget_mailchimp margin_0">
+                                <form class="signup" action="{% url 'newsletter' %}" method="POST">
+                                    <div class="form-group margin_0"> <input  name="email" required="" type="email" placeholder="Email Address"> </div> <button type="submit" class="theme_button color3 no_bg_button">Subscribe now</button>
+                                    <div class="response"></div>
+									<div class="col-sm-12"> 
+										<div class="response"></div>
+									</div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 text-center text-sm-right">
+                            <h5 class="margin_0"> <span class="small">Get the latest</span><br>Artist Hub News</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row topmargin_30">
+            <div class="col-md-4 text-center">
+                <div class="widget widget_text">
+                    <h4 class="widget-title"> Our new albums </h4>
+                    <ul class="greylinks list-unstyled">
+                        <li> <a href="https://youtu.be/XJ_eG340BIM">>DJ NYK - New Year Live Concert(2021)</a> </li>
+                        <li> <a href="https://youtu.be/T2DbC5DR7pU">Faded - alan walker (2016)</a> </li>
+                        <li> <a href="https://youtu.be/-75MHjsFSLg">Neha Kakkar - Live Concert in Indore 2019</a> </li>
+                        <li> <a href="https://youtu.be/zMEC9FZOY6k">Darshan Raval live performance in IIT ISM Dhanbad Srijan 2020</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="widget widget_text">
+                    <h4 class="widget-title"> Download Avaliable </h4>
+                    <p>You Can Book A New Artist In Show The Perfomance And Experience</p>
+                    <div class="big-icons topmargin_25"> <a href="#" class="social-icon border-icon socicon-apple"></a> <a href="#" class="social-icon border-icon socicon-google"></a> <a href="#" class="social-icon border-icon socicon-youtube"></a> </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="widget widget_text">
+                    <h4 class="widget-title"> Contact us </h4>
+                    <ul class="list-unstyled greylinks">
+                        <li> SG Highway Isckon Chross Road,Gujarat,India </li>
+                        <li> +91 9512250495 </li>
+                        <li> +91 7879180456 </li>
+                        <li> <a href="Princekumarbhut17@gnu.ac.in">artisthub@gmail.com</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+			<section class="ds page_copyright section_padding_25">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<div class="divided-content bottommargin_5"> <span><a class="social-icon socicon-facebook" href="#" title="Facebook"></a></span> <span><a class="social-icon socicon-twitter" href="#" title="Twitter"></a></span> <span><a class="social-icon socicon-youtube" href="#" title="Youtube"></a></span>								<span><a class="social-icon socicon-google" href="#" title="Google"></a></span> </div>
+							<p class="small-text big-spacing">&copy; Copyright 2017. All Rights Reserved.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+	<script src="{% static 'js/compressed.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/switcher.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/comingsoon1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:50:35 GMT -->
+</html>
+{% endblock %}

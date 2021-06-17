@@ -1,0 +1,200 @@
+{% extends 'headeruser.html' %}
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/shop-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:51:24 GMT -->
+<head>
+	<title>Crowd</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}">
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cue.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/shop.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/mediaelementplayer-legacy.css' %}">
+	<script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	{% block content %}
+
+			<section class="page_breadcrumbs cs gradient section_padding_top_25 section_padding_bottom_25 table_section table_section_md">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-left">
+							<h2 class="small">Booking Adress</h2>
+						</div>
+						<div class="col-md-6 text-center text-md-right">
+							<ol class="breadcrumb">
+								<li> <a href="{% url 'index' %}">
+							Home
+						</a> </li>
+								<li class="active">Artist</li>
+								<li class="active">Booking Address</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ls section_padding_top_100 section_padding_bottom_100 columns_padding_25">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div itemscope="" itemtype="http://schema.org/Product" class="product type-product row">
+								<div class="col-sm-5">
+									<div class="images text-center"> <a href="{{context.aid.profile_pic.url}}" itemprop="image" class="woocommerce-main-image zoom prettyPhoto" data-gal="prettyPhoto[product-gallery]">
+					            <img src="{{context.aid.profile_pic.url}}" class="attachment-shop_single wp-post-image" alt="" title="">
+					        </a> </div>
+								
+								</div>
+								<div class="summary entry-summary col-sm-5">
+									<div class="content-justify vertical-center content-margins">
+										<!-- <div class="product-rating" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"> -->
+										<div class="star-rating" title="Rated 4.0 out of 5"> <span style="width:80%">
+										<strong class="rating">4.0</strong> out of 5
+									</span> </div>
+										<!-- </div> --><span class="price">
+								<span class="amount highlight2">{{context.aid.user_id.email}}</span> </span>
+									</div>
+									<h1 itemprop="name" class="product_title">{{context.aid.user_id.fname}} {{context.aid.user_id.lname}}</h1>
+									<div>
+										<p>{{context.aid.description}}</p>
+									</div>
+									<br>
+									<br>
+									<span class="price">--- Extra Details ---</span>
+									<br>
+									<span class="product_title">Contact No : <span class="amount highlight2">{{context.aid.user_id.contactno}}</span></span><br>
+									<span class="product_title" >Address : <span class="amount highlight2">{{context.aid.address}}</span></span><br> 
+									<span class="product_title">City : <span class="amount highlight2">{{context.aid.city}}</span></span><br> 
+									<span class="product_title">State : <span class="amount highlight2">{{context.aid.State}}</span></span> <br>
+									<span class="product_title">Postcode : <span class="amount highlight2">{{context.aid.postcode}}</span></span> <br>
+									<span class="product_title">Country : <span class="amount highlight2">{{context.aid.country}}</span></span> <br>
+									<span class="product_title">Fax : <span class="amount highlight2">{{context.aid.fax}}</span> </span><br>
+								</div>
+							</div>
+					</div>	
+					</div>
+				</div>
+			</section>
+			<section class="ls section_padding_top_100 section_padding_bottom_100">
+				<div class="container">
+					<div class="row">
+						<form action="{% url 'shopproduct' pk=context.aid.id %}" method="POST" class="shop-register" role="form" enctype="multipart/form-data">
+							{% csrf_token %}
+						<div class="col-sm-6">
+							<div class="form-group validate-required" id="billing_first_name_field"> 
+								<label for="billing_first_name" class="control-label">
+								<span class="grey">First Name:</span>
+								<span class="required">*</span></label> 
+								<input type="text" class="form-control " name="fname" id="billing_first_name" placeholder="" value="{{context.uid.fname}}">
+							</div>
+						</div>
+						<div class="col-sm-6">
+								<div class="form-group validate-required" id="billing_last_name_field">
+									 <label for="billing_last_name" class="control-label">
+										<span class="grey">Last Name:</span>
+										<span class="required">*</span>	</label>
+										<input type="text" class="form-control " name="lname" id="billing_last_name" placeholder="" value="{{context.uid.lname}}"> 
+								</div>
+						</div>
+						<div class="col-sm-6">
+								<div class="form-group validate-required validate-email" id="billing_email_field"> 
+									<label for="billing_email" class="control-label">
+										<span class="grey">Email Address:</span>
+										<span class="required">*</span></label>
+										<input type="email" class="form-control " name="email" id="billing_email" placeholder="" value="{{context.uid.email}}" readonly> 
+								</div>
+							</div>
+						<div class="col-sm-6">
+								<div class="form-group validate-required" id="billing_last_name_field">
+									 <label for="billing_last_name" class="control-label">
+										<span class="grey">Budget:</span>
+										<span class="required">*</span>	</label>
+										<input type="text" class="form-control " name="budget" id="billing_last_name" placeholder=""> 
+								</div>
+						</div>
+							<div class="col-sm-6">
+								<div class="form-group validate-required" id="billing_last_name_field">
+									 <label for="billing_last_name" class="control-label">
+										<span class="grey">Event Name:</span>
+										<span class="required">*</span>	</label>
+										<input type="text" class="form-control " name="event_name" id="billing_last_name" placeholder="" > 
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group validate-required" id="billing_last_name_field">
+									 <label for="billing_last_name" class="control-label">
+										<span class="grey">Event Date:</span>
+										<span class="required">*</span>	</label>
+										<input type="date" class="form-control " name="event_date" id="billing_last_name" placeholder="" > 
+								</div>
+							</div>
+							
+						<div class="col-sm-12">
+								<div class="form-group address-field validate-required" id="billing_address_fields"> 
+									<label for="billing_address_1" class="control-label">
+										<span class="grey">Address:</span>
+										<span class="required">*</span></label> 
+										<input type="text" class="form-control " name="address" id="billing_address_1" placeholder="" value=""> </div>
+								</div>
+							<div class="col-sm-6">
+								<div class="form-group address-field validate-required" id="billing_city_field"> <label for="billing_city" class="control-label">
+							<span class="grey">Town / City:</span>
+							<span class="required">*</span>
+						</label> <input type="text" class="form-control " name="city" id="billing_city" placeholder="" value=""> </div>
+							</div>
+							<div class="col-sm-6">		
+						<div class="form-group validate-required validate-phone" id="billing_phone_field"> <label for="billing_phone" class="control-label">
+							<span class="grey">Phone:</span>
+							<span class="required">*</span>
+						</label> <input type="text" class="form-control " name="phone" id="billing_phone" placeholder="" value="{{context.uid.contactno}}"> </div>
+					</div>
+							</div>
+							
+								<div class="col-sm-12">
+									<div class="form-group validate-required validate-email" id="billing_email_field"> 
+										<label for="billing_email" class="control-label">
+											<span class="grey">Description:</span>
+											<span class="required">*</span></label>
+											<textarea type="text" class="form-control " rows=5 name="description" id="billing_email" placeholder="" value="" ></textarea> 
+									</div>
+								</div>
+
+							<div class="col-sm-12"> <button type="submit" class="theme_button wide_button color topmargin_40">Register Now</button> <button type="reset" class="theme_button wide_button">Clear Form</button> </div>
+						</form>
+					</div>
+				</div>
+			</section>
+			{% endblock %}
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+	<script src="{% static 'js/compressed.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/switcher.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/shop-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:51:24 GMT -->
+</html>

@@ -1,0 +1,210 @@
+{% extends 'header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/shop-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:51:24 GMT -->
+<head>
+	<title>Crowd</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}">
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cue.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/shop.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/mediaelementplayer-legacy.css' %}">
+	<script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	{% block content %}
+
+			<section class="page_breadcrumbs cs gradient section_padding_top_25 section_padding_bottom_25 table_section table_section_md">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-left">
+							<h2 class="small">Artist Registration</h2>
+						</div>
+						<div class="col-md-6 text-center text-md-right">
+							<ol class="breadcrumb">
+								<li> <a href="{% url 'index' %}">
+							Home
+						</a> </li>
+								<li class="active">Artist</li>
+								<li class="active">Artist Registration</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ls section_padding_top_100 section_padding_bottom_100">
+				<div class="container">
+					<div class="row">
+						<form action="{% url 'shopregister' %}" method="POST" class="shop-register" role="form" enctype="multipart/form-data">
+							{% csrf_token %}
+						<div class="col-sm-6">
+							<div class="form-group validate-required" id="billing_first_name_field"> 
+								<label for="billing_first_name" class="control-label">
+								<span class="grey">First Name:</span>
+								<span class="required">*</span></label> 
+								<input type="text" class="form-control " name="a_fname" id="billing_first_name" placeholder="" value="{{context.uid.fname}}">
+							</div>
+						</div>
+						<div class="col-sm-6">
+								<div class="form-group validate-required" id="billing_last_name_field">
+									 <label for="billing_last_name" class="control-label">
+										<span class="grey">Last Name:</span>
+										<span class="required">*</span>	</label>
+										<input type="text" class="form-control " name="a_lname" id="billing_last_name" placeholder="" value="{{context.uid.lname}}"> 
+								</div>
+						</div>
+						<div class="col-sm-6">
+								<div class="form-group validate-required validate-email" id="billing_email_field"> 
+									<label for="billing_email" class="control-label">
+										<span class="grey">Email Address:</span>
+										<span class="required">*</span></label>
+										<input type="text" class="form-control " name="a_email" id="billing_email" placeholder="" value="{{context.uid.email}}" readonly> 
+								</div>
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group validate-required validate-profile_pic" id="billing_profile_pic__field"> 
+									<label for="billing_profile" class="control-label">
+										<span class="grey">Profile:</span>
+									</label>
+										<input type="file" class="form-control " name="a_profile_pic" id="billing_profile" placeholder=""> 
+								</div>
+							</div>
+						<div class="col-sm-12">
+								<div class="form-group address-field validate-required" id="billing_address_fields"> 
+									<label for="billing_address_1" class="control-label">
+										<span class="grey">Address:</span>
+										<span class="required">*</span></label> 
+										<input type="text" class="form-control " name="a_address" id="billing_address_1" placeholder="" value=""> </div>
+								</div>
+							<div class="col-sm-6">
+								<div class="form-group address-field validate-required" id="billing_city_field"> <label for="billing_city" class="control-label">
+							<span class="grey">Town / City:</span>
+							<span class="required">*</span>
+						</label> <input type="text" class="form-control " name="a_city" id="billing_city" placeholder="" value=""> </div>
+								<div class="form-group address-field validate-required validate-postcode" id="billing_postcode_field"> <label for="billing_postcode" class="control-label">
+							<span class="grey">Postcode:</span>
+							<span class="required">*</span>
+						</label> <input type="text" class="form-control " name="a_postcode" id="billing_postcode" placeholder="" value=""> </div>
+								<div class="form-group validate-required validate-phone" id="billing_phone_field"> <label for="billing_phone" class="control-label">
+							<span class="grey">Phone:</span>
+							<span class="required">*</span>
+						</label> <input type="text" class="form-control " name="a_phone" id="billing_phone" placeholder="" value="{{context.uid.contactno}}"> </div>
+						
+							</div>
+							<div class="col-sm-6">
+								<div class="form-group"> <label for="billing_state" class="control-label">
+							<span class="grey">State/Province:</span>
+							<span class="required">*</span>
+						</label> <select class="form-control" name="a_state" id="billing_state">
+							<option value="Andhra Pradesh">Andhra Pradesh</option>
+							<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+							<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+							<option value="Assam">Assam</option>
+							<option value="Bihar">Bihar</option>
+							<option value="Chandigarh">Chandigarh</option>
+							<option value="Chhattisgarh">Chhattisgarh</option>
+							<option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+							<option value="Daman and Diu">Daman and Diu</option>
+							<option value="Delhi">Delhi</option>
+							<option value="Lakshadweep">Lakshadweep</option>
+							<option value="Puducherry">Puducherry</option>
+							<option value="Goa">Goa</option>
+							<option value="Gujarat">Gujarat</option>
+							<option value="Haryana">Haryana</option>
+							<option value="Himachal Pradesh">Himachal Pradesh</option>
+							<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+							<option value="Jharkhand">Jharkhand</option>
+							<option value="Karnataka">Karnataka</option>
+							<option value="Kerala">Kerala</option>
+							<option value="Madhya Pradesh">Madhya Pradesh</option>
+							<option value="Maharashtra">Maharashtra</option>
+							<option value="Manipur">Manipur</option>
+							<option value="Meghalaya">Meghalaya</option>
+							<option value="Mizoram">Mizoram</option>
+							<option value="Nagaland">Nagaland</option>
+							<option value="Odisha">Odisha</option>
+							<option value="Punjab">Punjab</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Sikkim">Sikkim</option>
+							<option value="Tamil Nadu">Tamil Nadu</option>
+							<option value="Telangana">Telangana</option>
+							<option value="Tripura">Tripura</option>
+							<option value="Uttar Pradesh">Uttar Pradesh</option>
+							<option value="Uttarakhand">Uttarakhand</option>
+							<option value="West Bengal">West Bengal</option>
+						</select> </div>
+
+
+						<div class="form-group"> <label for="billing_country" class="control-label">
+							<span class="grey">Country:</span>
+							<span class="required">*</span>
+						</label> <select class="form-control" name="a_country" id="billing_country">
+							<option value="">Select a country…</option>
+							<option value="India">India</option>
+							<option value="United Kingdom">United Kingdom</option>
+							<option value="United State">United State</option>
+							<option value="Georgia">Georgia</option>
+							<option value="United Arab Emirates">United Arab Emirates</option>
+							<option value="India" selected="selected">India</option>
+						</select> </div>
+
+
+								<div class="form-group validate-required validate-fax" id="billing_fax_field">
+									 <label for="billing_fax" class="control-label">
+										<span class="grey">Fax:</span>
+										<span class="required">*</span></label>
+										 <input type="text" class="form-control " name="a_fax" id="billing_fax" placeholder="" value=""> 
+									</div>
+								</div>
+
+
+								<div class="col-sm-12">
+									<div class="form-group validate-required validate-email" id="billing_email_field"> 
+										<label for="billing_email" class="control-label">
+											<span class="grey">Description:</span>
+											<span class="required">*</span></label>
+											<textarea type="text" class="form-control " rows=5 name="a_description" id="billing_email" placeholder="" value="" ></textarea> 
+									</div>
+								</div>
+
+							<div class="col-sm-12"> <button type="submit" class="theme_button wide_button color topmargin_40">Register Now</button> <button type="reset" class="theme_button wide_button">Clear Form</button> </div>
+						</form>
+					</div>
+				</div>
+			</section>
+			{% endblock %}
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+	<script src="{% static 'js/compressed.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/switcher.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/shop-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:51:24 GMT -->
+</html>

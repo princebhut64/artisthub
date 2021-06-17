@@ -1,0 +1,196 @@
+{% extends 'header.html' %}
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/shop-right.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:51:03 GMT -->
+<head>
+	<title>Crowd</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}">
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+	<link rel="stylesheet" href="{% static 'css/cue.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/shop.css' %}" class="color-switcher-link">
+	<link rel="stylesheet" href="{% static 'css/mediaelementplayer-legacy.css' %}">
+	<script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	{% block content %}
+
+			<section class="page_breadcrumbs cs gradient section_padding_top_25 section_padding_bottom_25 table_section table_section_md">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-left">
+							<h2 class="small">Book Artist</h2>
+						</div>
+						<div class="col-md-6 text-center text-md-right">
+							<ol class="breadcrumb">
+								<li> <a href="{% url 'index' %}">
+							Home
+						</a> </li>
+								<li> <a href="#">Artist</a> </li>
+								<li class="active">Book Artist</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="ls section_padding_top_100 section_padding_bottom_100 columns_padding_25">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-7 col-md-8 col-lg-8 col-sm-push-5 col-md-push-4 col-lg-push-4">
+							<div class="shop-sorting">
+								<form class="form-inline content-justify vertical-center content-margins">
+									<div> Showing 1-6 of 36 results </div>
+									<div class="form-group select-group"> <select aria-required="true" id="date" name="date" class="choice empty form-control">
+		                        <option value="all"selected=selected>All</option>
+		                        <option value="value">Anchor</option>
+		                        <option value="date">Dancer</option>
+		                        <option value="popular">Singer</option>
+		                        <option value="popular">Liveband</option>
+		                        <option value="popular">Instrumentalist</option>
+		                    </select> <i class="fa fa-angle-down theme_button color1 no_bg_button" aria-hidden="true"></i> </div>
+								</form>
+							</div>
+							<div class="columns-2">
+								<ul id="products" class="products list-unstyled">
+
+
+									{% for i in context.aid %}
+									<li class="product type-product">
+										<div class="vertical-item content-padding text-center">
+											<div> <img src="{{i.profile_pic.url}}" height="200" width="400" alt="photos" />
+												<div class="media-links no-overlay"> <a href="#0" class="abs-link"></a> </div>
+											</div>
+											<div class="item-content with_shadow">
+												<div class="small-text item-meta content-justify vertical-center">
+													<div class="price"> <ins>
+												<span class="amount">{{i.user_id.email}}</span>
+											</ins> </div>
+													<div class="star-rating right-align" title="Rated 4.0 out of 5"> <span style="width:80%">
+												<strong class="rating">4.0</strong> out of 5
+											</span> </div>
+												</div>
+												<h4 class="entry-title"> <a href="{% url 'shopproduct' %}">{{i.user_id.fname}} {{i.user_id.lname}}</a> </h4>
+												<p class="content-3lines-ellipsis">{{i.description}}</p>
+												<p class="topmargin_25"> <a href="{% url 'shopproduct' pk=i.id %}" class="theme_button color min_width_button">
+											Book Artist 
+										</a> </p>
+											</div>
+										</div>
+									</li>
+									{% endfor %}
+								</ul>
+							</div>
+							<!-- eof .columns-* -->
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<ul class="pagination">
+										<li class="disabled"><a href="#"><span class="sr-only">Prev</span><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+										<li class="active"><a href="#">1</a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+										<li><a href="#"><span class="sr-only">Next</span><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<aside class="col-sm-5 col-md-4 col-lg-4 col-sm-pull-7 col-md-pull-8 col-lg-pull-8">
+							<div class="widget widget_search">
+								<h3 class="widget-title">Search</h3>
+								<form method="get" class="searchform" action="{% static 'http://html.modernwebtemplates.com/thecrowd/' %}">
+									<div class="form-group"> <label class="sr-only" for="widget-search">Search for:</label> <input id="widget-search" type="text" value="" name="search" class="form-control" placeholder="Search Keyword"> </div> <button type="submit" class="theme_button color">Search</button>									</form>
+							</div>
+							<div class="widget widget_categories">
+								<h3 class="widget-title">All Categories</h3>
+								<ul class="list2 checklist color2 greylinks">
+									<li> <a href="#0">Picanha turducken</a> </li>
+									<li> <a href="#0">Prosciutto frankfurter</a> </li>
+									<li> <a href="#0">Ribeye sausage</a> </li>
+								</ul>
+							</div>
+							<div class="widget widget_price_filter">
+								<h3 class="widget-title">Filter by Price</h3>
+								<!-- price slider -->
+								<form method="get" action="#" class="form-inline">
+									<div class="slider-range-price"></div>
+									<div class="price_label" style=""> Price: <span class="price_from">2</span> - <span class="price_to">35</span> </div>
+									<div class="topmargin_20"> <button type="submit" class="theme_button color min_width_button">Filter</button> </div>
+								</form>
+							</div>
+							<div class="widget widget_shopping_cart">
+								<h3 class="widget-title">Your Cart</h3>
+								<div class="widget_shopping_cart_content">
+									<ul class="cart_list product_list_widget ">
+										<li class="media">
+											<div class="media-left media-middle"> <a href="shop-product-right.html">
+								<img src="{% static 'images/shop/01-thumb.jpg' %}" class="muted_background" alt="">
+							</a> </div>
+											<div class="media-body"> <span class="highlight2links">
+								<a href="#" class="remove" title="Remove this item"></a>
+							</span>
+												<h4> <a href="shop-product-right.html">Drumstick short ribs</a> </h4>
+												<div class="star-rating small-stars" title="Rated 4.0 out of 5"> <span style="width:80%">
+									<strong class="rating">4.0</strong> out of 5
+								</span> </div> <span class="product-quantity">
+								<span>1 x</span> <span class="price">$56.69</span> </span>
+											</div>
+										</li>
+										<li class="media">
+											<div class="media-left media-middle"> <a href="shop-product-right.html">
+								<img src="{% static 'images/shop/02-thumb.jpg' %}" class="muted_background" alt="">
+							</a> </div>
+											<div class="media-body"> <span class="highlight2links">
+								<a href="#" class="remove" title="Remove this item"></a>
+							</span>
+												<h4> <a href="shop-product-right.html">Drumstick short ribs</a> </h4>
+												<div class="star-rating small-stars" title="Rated 4.0 out of 5"> <span style="width:60%">
+									<strong class="rating">3.0</strong> out of 5
+								</span> </div> <span class="product-quantity">
+								<span>1 x</span> <span class="price">$13.25</span> </span>
+											</div>
+										</li>
+									</ul>
+									<p class="total topmargin_10"> <span>Subtotal:</span> <span class="price">$69.94</span> </p>
+									<p class="buttons content-justify"> <a href="shop-cart-right.html" class="theme_button color min_width_button">View cart</a> </p>
+								</div>
+							</div>
+						</aside>
+						<!-- eof aside sidebar -->
+					</div>
+				</div>
+			</section>
+			{% endblock %}
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+	<script src="{% static 'js/compressed.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/switcher.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from html.modernwebtemplates.com/thecrowd/shop-right.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 14:51:09 GMT -->
+</html>
